@@ -1,10 +1,16 @@
 import { Component } from '@angular/core';
+import { Post } from './post/post.model';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'post-app';
+  storedPosts: Post[] = [];
+
+  onPostAdded(post: Post) {
+    this.storedPosts.push(post);
+  }
 }
+
